@@ -13,7 +13,7 @@
         clearable
         prepend-inner-icon="mdi-magnify"
         label="Search"
-        class="pt-1 px-2"
+        class="py-1 px-2"
       />
       <v-list
         two-line
@@ -42,18 +42,17 @@
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
-      <!--      <v-btn icon>-->
-      <!--        <v-icon>mdi-dots-vertical</v-icon>-->
-      <!--      </v-btn>-->
+<!--      <v-btn icon>-->
+<!--        <v-icon>mdi-dots-vertical</v-icon>-->
+<!--      </v-btn>-->
       <v-app-bar-nav-icon />
     </v-app-bar>
-    <v-content style="position: relative;">
+    <v-content class="flex-d" style="position: relative;">
       <v-col cols="12">
         <v-container>
           <v-row
             v-for="msg in selectChat.messages"
             :key="msg.id"
-            :class="msg.sender === user && 'flex-row-reverse'"
           >
             <v-avatar class="mt-5">
               <v-img :src="selectChat.avatar"></v-img>
@@ -96,7 +95,6 @@
   name: 'Home',
   data () {
     return {
-      user: 2,
       selectChat: {},
       chats: [
         {
@@ -153,4 +151,7 @@
 
 </script>
 <style>
+  #enter {
+    align-items: flex-end;
+  }
 </style>
